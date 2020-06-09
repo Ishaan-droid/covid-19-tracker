@@ -1,0 +1,305 @@
+/* Styling the body view */
+
+
+/* Styling for header view */
+
+.header h1 {
+    font-weight: normal;
+    font-size: 4rem;
+}
+
+.covid-header-img {
+    height: 4rem;
+    width: 4rem;
+    position: relative;
+    right: 1rem;
+    bottom: 0.5rem;
+}
+
+
+/*Styling for summary view */
+
+.summary-data {
+    padding-top: 50px;
+}
+
+
+/* Confirmed Section */
+
+.confirmed {
+    color: red;
+}
+
+.confirmed-plus {
+    font-size: 0.75rem;
+    color: red;
+    display: inline-block;
+    width: 40px;
+    height: 10px;
+    position: relative;
+    left: 40px;
+    bottom: 20px;
+}
+
+.confirmed-near-plus {
+    position: relative;
+    bottom: 24px;
+}
+
+.confirmed-progress-style {
+    position: relative;
+    bottom: 10px;
+}
+
+
+/* Active Section */
+
+.active {
+    color: blue;
+}
+
+.active-plus {
+    font-size: 0.75rem;
+    color: blue;
+    display: inline-block;
+    width: 40px;
+    height: 10px;
+    position: relative;
+    left: 40px;
+    bottom: 20px;
+}
+
+.active-near-plus {
+    position: relative;
+    bottom: 24px;
+}
+
+.active-progress-style {
+    position: relative;
+    bottom: 10px;
+}
+
+
+/* Recovered Section */
+
+.recovered {
+    color: green;
+}
+
+.recovered-plus {
+    font-size: 0.75rem;
+    color: green;
+    display: inline-block;
+    width: 40px;
+    height: 10px;
+    position: relative;
+    left: 40px;
+    bottom: 20px;
+}
+
+.recovered-near-plus {
+    position: relative;
+    bottom: 24px;
+}
+
+.recovered-progress-style {
+    position: relative;
+    bottom: 10px;
+}
+
+
+/* Deceased Section */
+
+.deceased {
+    color: #393e46;
+}
+
+.deceased-plus {
+    font-size: 0.75rem;
+    color: #393e46;
+    display: inline-block;
+    width: 40px;
+    height: 10px;
+    position: relative;
+    left: 40px;
+    bottom: 10px;
+}
+
+.deceased-near-plus {
+    position: relative;
+    bottom: 24px;
+    margin-top: 12px;
+}
+
+.deceased-progress-style {
+    position: relative;
+    bottom: 12px;
+}
+
+.dec-bar-color {
+    background-color: #393e46;
+}
+
+.confirmed,
+.active,
+.recovered,
+.deceased p {
+    font-size: 1.5rem;
+}
+
+.test-bar-style {
+    background-color: purple;
+}
+
+
+/* Styling for pie and table div */
+
+.pie-table-chart {
+    padding-top: 20px;
+}
+
+.table-style {
+    font-size: 11px;
+}
+
+
+/* Styling footer */
+
+.footer-style h5 {
+    background-color: #393e46;
+    color: white;
+    padding: 20px;
+}
+
+
+/* CSS for mobile view */
+
+@media(max-width: 900px) {
+    /* Styling for mobile header view */
+    .header h1 {
+        font-weight: normal;
+        font-size: 2rem;
+        position: relative;
+        left: 5.5rem;
+    }
+    .covid-header-img {
+        height: 2rem;
+        width: 2rem;
+        position: relative;
+        right: 1rem;
+        bottom: 0.2rem;
+    }
+    /* Styling for summary block */
+    /* Confirmed block */
+    .confirmed h3 {
+        font-size: 1rem;
+        position: relative;
+        left: 5.5rem;
+    }
+    .confirmed-plus {
+        font-size: 0.5rem;
+        position: relative;
+        left: 6.5rem;
+    }
+    .confirmed-near-plus p {
+        font-size: 0.75rem;
+        position: relative;
+        left: 5.5rem;
+    }
+    .confirmed-progress-style {
+        width: 20rem;
+        height: 0.75rem;
+        position: relative;
+        left: 5rem;
+    }
+    /* Active Block */
+    .active h3 {
+        font-size: 1rem;
+        position: relative;
+        left: 5.5rem;
+    }
+    .active-plus {
+        font-size: 0.5rem;
+        position: relative;
+        left: 6.5rem;
+    }
+    .active-near-plus p {
+        font-size: 0.75rem;
+        position: relative;
+        left: 5.5rem;
+    }
+    .active-progress-style {
+        width: 20rem;
+        height: 0.75rem;
+        position: relative;
+        left: 5rem;
+    }
+    /* Recovery Block */
+    .recovered h3 {
+        font-size: 1rem;
+        position: relative;
+        left: 5.5rem;
+    }
+    .recovered-plus {
+        font-size: 0.5rem;
+        position: relative;
+        left: 6.5rem;
+    }
+    .recovered-near-plus p {
+        font-size: 0.75rem;
+        position: relative;
+        left: 5.5rem;
+    }
+    .recovered-progress-style {
+        width: 20rem;
+        height: 0.75rem;
+        position: relative;
+        left: 5rem;
+    }
+    /* Deceased Block */
+    .deceased h3 {
+        font-size: 1rem;
+        position: relative;
+        left: 5.5rem;
+    }
+    .deceased-plus {
+        font-size: 0.5rem;
+        position: relative;
+        left: 6.5rem;
+    }
+    .deceased-near-plus p {
+        font-size: 0.75rem;
+        position: relative;
+        left: 5.5rem;
+    }
+    .deceased-progress-style {
+        width: 20rem;
+        height: 0.75rem;
+        position: relative;
+        left: 5rem;
+    }
+    /* Placing pie chart */
+    #piechart {
+        position: relative;
+        right: 2rem;
+    }
+    /* Table style */
+    .table-style {
+        position: relative;
+        left: 1.5rem;
+    }
+    /*Helpline button */
+    .btn {
+        position: relative;
+        left: 3.7rem;
+        bottom: 5rem;
+        width: 20rem;
+    }
+    /* Footer Style */
+    .footer-style h5 {
+        font-size: 1rem;
+        width: 25.5rem;
+        position: relative;
+        left: 1.5rem;
+    }
+}
