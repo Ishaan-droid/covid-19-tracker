@@ -174,7 +174,7 @@
 
 /* CSS for mobile view */
 
-@media(max-width: 900px) {
+@media(max-width: 600px) {
     /* Styling for mobile header view */
     .header h1 {
         font-weight: normal;

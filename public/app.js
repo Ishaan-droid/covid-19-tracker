@@ -77,13 +77,18 @@ async function fetchData() {
         //Creating function to update table count
         tableCount = () => {
             for (let i = 1; i < readableData.statewise.length; i++) {
+                //Declaring variables
+                let deltaconfirmed = readableData.statewise[i].deltaconfirmed;
+                let deltarecovered = readableData.statewise[i].deltarecovered;
+                let deltaDeath = readableData.statewise[i].deltadeaths;
+
                 $("tbody").append(`<tr>
-                   <th scope="row">${readableData.statewise[i].state}</th>
-                   <td>${readableData.statewise[i].confirmed}</td>
-                   <td>${readableData.statewise[i].active}</td>
-                   <td>${readableData.statewise[i].recovered}</td>
-                   <td>${readableData.statewise[i].deaths}</td>
-                 </tr>`);
+                           <th scope="row">${readableData.statewise[i].state}</th>
+                           <td>${readableData.statewise[i].confirmed} <span style="color : red"><p>↑${deltaconfirmed}</p></span></td>
+                           <td>${readableData.statewise[i].active} </td>
+                           <td>${readableData.statewise[i].recovered} <span style="color : green"><p>↑${deltarecovered}</p></span></td>
+                           <td>${readableData.statewise[i].deaths} <span style="color : #393e46"><p>↑${deltaDeath}</p></span></td>
+                         </tr>`);
             }
         }
 
@@ -119,10 +124,9 @@ async function fetchData() {
             //Define pie through google chart
             var data = google.visualization.arrayToDataTable([
                 ['Category', 'Numbers'],
-                ['Active', activeNumber],
-                ['Confirmed', confirmedNumber],
+                ['Recovered', recoveredNumber],
                 ['Deceased', deceasedNumber],
-                ['Recovered', recoveredNumber]
+                ['Active', activeNumber]
             ]);
 
             var options = {
