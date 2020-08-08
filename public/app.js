@@ -3,7 +3,7 @@ async function fetchData() {
     try {
         const data = await fetch(`https://api.covid19india.org/data.json`);
         let readableData = await data.json();
-        console.log(readableData);
+        //console.log(readableData);
 
 
         //Define the stats from the API
@@ -67,7 +67,7 @@ async function fetchData() {
             }
 
 
-        }
+        };
 
 
         //Calling the function to update daily numbers
@@ -90,7 +90,7 @@ async function fetchData() {
                            <td>${readableData.statewise[i].deaths} <span style="color : #393e46"><p>↑${deltaDeath}</p></span></td>
                          </tr>`);
             }
-        }
+        };
 
 
         //Calling the function to update table count
@@ -98,16 +98,16 @@ async function fetchData() {
 
         //Creating a function to alter progress bar
         progressChange = () => {
-            let con = Math.round((confirmedNumber / 1000000) * 100);
+            let con = Math.round((confirmedNumber / 10000000) * 100);
             document.querySelector('.confirmed .progress-bar').setAttribute('style', 'width:' + con + '%');
 
-            let act = Math.round((activeNumber / 1000000) * 100);
+            let act = Math.round((activeNumber / 10000000) * 100);
             document.querySelector('.active .progress-bar').setAttribute('style', 'width:' + act + '%');
 
-            let rec = Math.round((recoveredNumber / 1000000) * 100);
+            let rec = Math.round((recoveredNumber / 10000000) * 100);
             document.querySelector('.recovered .progress-bar').setAttribute('style', 'width:' + rec + '%');
 
-            let dec = Math.round((deceasedNumber / 1000000) * 100);
+            let dec = Math.round((deceasedNumber / 10000000) * 100);
             document.querySelector('.deceased .progress-bar').setAttribute('style', 'width:' + dec + '%');
         };
 
