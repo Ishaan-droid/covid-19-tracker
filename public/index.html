@@ -1,108 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="covid 19 tracker india">
-    <meta name="description" content="covid-19 tracker india">
-    <meta name="description" content="coronavirus india">
-    <meta name="description" content="covid tracker india">
-    <meta name="description" content="covid tracker">
-    <meta name="author" content="Ishaan Thakur">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="covid 19 tracker india" />
+    <meta name="description" content="covid-19 tracker india" />
+    <meta name="description" content="coronavirus india" />
+    <meta name="description" content="covid tracker india" />
+    <meta name="description" content="covid tracker" />
+    <meta name="author" content="Ishaan Thakur" />
     <title>Covid-19 India Tracker</title>
     <!--Calling Favicon-->
-    <link rel="icon" sizes="57x57" href="covid-favicon.png">
+    <link rel="icon" sizes="57x57" href="covid-favicon.png" />
     <!--Calling Bootstrap-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
     <!--Calling my CSS-->
-    <link rel="stylesheet" href="style.css">
-    <!--Calling JS of google chart-->
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Calling Chart.js-->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"
+      integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw=="
+      crossorigin="anonymous"
+    ></script>
     <!--Calling dataTables-->
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
-</head>
+    <!-- <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css"
+    /> -->
+    <!--Calling my javascript-->
+    <script type="module" defer src="app.js"></script>
+  </head>
 
-<body>
-
+  <body>
     <!--Creating the header div-->
     <div class="header text-center container">
-        <div>
-            <h1><img class="covid-header-img" src="Covid-header.jpg" alt="covid-image">Covid-19 Tracker</h1>
-        </div>
+      <div>
+        <h1>
+          <img class="covid-header-img" src="Covid-header.jpg" alt="covid-image" />Covid-19 Tracker
+        </h1>
+      </div>
     </div>
 
     <!--Creating the summary div-->
     <div class="summary-data container text-center">
-        <h2>These progress bars are with respect to twenty million</h2>
-        <div class="row ">
-            <div class="confirmed col-lg-3 col-md-6 col-sm-3">
-                <h3>Confirmed</h3>
-                <h6 class="confirmed-plus"> +500</h6>
-                <div class="confirmed-near-plus">
-                    <p> 2,56,000
-                        <div class="progress confirmed-progress-style">
-                            <div class="progress-bar bg-danger" role="progressbar" style="width: 15%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                </div>
+      <h2>These progress bars are with respect to twenty million</h2>
+      <div class="row">
+        <div class="confirmed col-lg-3 col-md-6 col-sm-3">
+          <h3>Confirmed</h3>
+          <h6 class="confirmed-plus">+500</h6>
+          <div class="confirmed-near-plus">
+            <p>2,56,000</p>
+            <div class="progress confirmed-progress-style">
+              <div
+                class="progress-bar bg-danger"
+                role="progressbar"
+                style="width: 15%"
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
             </div>
-            <div class="active col-lg-3 col-md-6 col-sm-3">
-                <h3>Active</h3>
-                <h6 class="active-plus"> +500</h6>
-                <div class="active-near-plus">
-                    <p>1,20,000</p>
-                    <div class="progress active-progress-style">
-                        <div class="progress-bar bg-info" role="progressbar" style="width: 12%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="recovered col-lg-3 col-md-6 col-sm-3">
-                <h3>Recovered</h3>
-                <h6 class="recovered-plus"> +500</h6>
-                <div class="recovered-near-plus">
-                    <p>1,24,000</p>
-                    <div class="progress recovered-progress-style">
-                        <div class="progress-bar bg-success" role="progressbar" style="width: 14%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="deceased col-lg-3 col-md-6 col-sm-3">
-                <h3>Deceased</h3>
-                <h6 class="deceased-plus"> +500</h6>
-                <div class="deceased-near-plus">
-                    <p>7,000</p>
-                    <div class="progress deceased-progress-style">
-                        <div class="progress-bar dec-bar-color" role="progressbar" style="width: 0.7%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
+        <div class="active col-lg-3 col-md-6 col-sm-3">
+          <h3>Active</h3>
+          <h6 class="active-plus">+500</h6>
+          <div class="active-near-plus">
+            <p>1,20,000</p>
+            <div class="progress active-progress-style">
+              <div
+                class="progress-bar bg-info"
+                role="progressbar"
+                style="width: 12%"
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
+            </div>
+          </div>
+        </div>
+        <div class="recovered col-lg-3 col-md-6 col-sm-3">
+          <h3>Recovered</h3>
+          <h6 class="recovered-plus">+500</h6>
+          <div class="recovered-near-plus">
+            <p>1,24,000</p>
+            <div class="progress recovered-progress-style">
+              <div
+                class="progress-bar bg-success"
+                role="progressbar"
+                style="width: 14%"
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
+            </div>
+          </div>
+        </div>
+        <div class="deceased col-lg-3 col-md-6 col-sm-3">
+          <h3>Deceased</h3>
+          <h6 class="deceased-plus">+500</h6>
+          <div class="deceased-near-plus">
+            <p>7,000</p>
+            <div class="progress deceased-progress-style">
+              <div
+                class="progress-bar dec-bar-color"
+                role="progressbar"
+                style="width: 0.7%"
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!--Creating pie chart and table-->
-    <div class="pie-table-chart container text-center">
-        <div class="row md-auto">
-            <!--Adding Pie Chart-->
-            <div class="col-lg-6 col-md-6 col-sm-12">
-                <div id="piechart" style="width: 550px; height: 500px;"></div>
-                <button type="button" class="btn btn-outline-info btn-lg"><a href="https://www.mohfw.gov.in/pdf/coronvavirushelplinenumber.pdf">Coronavirus Helpline Number</a></button>
-            </div>
-            <!--Adding Table-->
-            <div class="col-lg-6 col-md-6 col-sm-12">
+    <div class="container text-center">
+      <div class="row md-auto">
+        <!--Adding Line Graph-->
+        <div class="col-lg-6 col-md-6 col-sm-12">
+          <div class="row line-graph">
+            <canvas id="ConfirmedMyChart"></canvas>
+          </div>
+          <div class="row line-graph">
+            <canvas id="RecoveredMyChart"></canvas>
+          </div>
+          <div class="row line-graph">
+            <canvas id="DeceasedMyChart"></canvas>
+          </div>
+        </div>
+        <!--Adding Table-->
+        <div class="col-lg-6 col-md-6 col-sm-12 table-style">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">State</th>
+                <th scope="col">Confirmed</th>
+                <th scope="col">Active</th>
+                <th scope="col">Recovered</th>
+                <th scope="col">Deceased</th>
+              </tr>
+            </thead>
 
-                <table class="table table-style table-striped">
-                    <thead>
-                        <tr>
-                            <th scope="col">State</th>
-                            <th scope="col">Confirmed</th>
-                            <th scope="col">Active</th>
-                            <th scope="col">Recovered</th>
-                            <th scope="col">Deceased</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        <!--
+            <tbody class="table_body">
+              <!--
                         <tr>
                             <th scope="row">Andhra Pradesh</th>
                             <td>Jacob <span><p>+3499</p></span></td>
@@ -118,29 +167,42 @@
                             <td>@mdo</td>
                         </tr>
                          -->
-                    </tbody>
-                </table>
-            </div>
+            </tbody>
+          </table>
         </div>
+      </div>
     </div>
 
     <!--Creating Footer-->
-    <div class='container text-center footer-style'>
-        <footer>
-            <h5>&copy; Ishaan Thakur</h5>
-        </footer>
+    <div class="container text-center footer-style">
+      <footer>
+        <h5>Made with ❤️ Ishaan Thakur</h5>
+      </footer>
     </div>
 
     <!--Calling bootstrap jquery-->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
     <!--Calling JS for  Data tables-->
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
+    <!-- <script
+      type="text/javascript"
+      charset="utf8"
+      src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"
+    ></script> -->
     <!--Calling my jQuery-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!--Calling my javascript-->
-    <script src="server.js"></script>
-</body>
-
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+  </body>
 </html>
