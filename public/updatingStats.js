@@ -20,7 +20,7 @@ const internationalFormat = count => new Intl.NumberFormat().format(Number(count
 
 // Converting To Percentage
 
-const convertPercentage = count => Math.trunc((count / (2 * Math.pow(10, 7))) * 100);
+const convertPercentage = count => Math.trunc((count / (5 * Math.pow(10, 7))) * 100);
 
 // UPDATING SUMMARY
 
@@ -55,6 +55,11 @@ export const updateProgress = function (confirmed, active, recovered, deaths) {
 // UPDATING TABLE
 
 export const updateTable = function (data) {
+  data.sort((a, b) => {
+    const { deltaconfirmed: aConfirmed } = a;
+    const { deltaconfirmed: bConfirmed } = b;
+    return bConfirmed - aConfirmed;
+  });
   data.forEach((_, idx) => {
     const html = `<tr>
                 <th style="vertical-align : middle">${data[idx].state}</th>

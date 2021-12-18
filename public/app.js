@@ -15,7 +15,7 @@ const displayCharts = function (data, six_months) {
 // LOAD AND DISPLAY DATA
 
 (async function () {
-  const response = await fetch(`https://api.covid19india.org/data.json`);
+  const response = await fetch(`https://data.covid19india.org/data.json`);
   const data = await response.json();
 
   // Destructuring Data
